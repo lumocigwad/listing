@@ -44,7 +44,16 @@
         </div>
         <div class="form-group">
             <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo (isset($_SESSION['email'])) ? $_SESSION['email'] : '' ?>" required>
-        </div>
+             </div>
+            <div class="form-group">
+            <select class="icons  sel" name="type">
+      <option value=""  disabled selected>Type of User</option>
+      <option value="0">Landlord</option>
+      <option value="2">User</option>
+    
+    </select>
+  </div>
+       
         <div class="form-group">
             <input type="password" class="form-control" name="password" placeholder="Password" required>
         </div>

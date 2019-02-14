@@ -43,23 +43,23 @@
 	        				</div>
 	        				<div class="col-sm-9">
 	        					<div class="row">
-	        						<div class="col-sm-9">
-	        							<p><h6><b>Name:</b><?php echo $user['firstname'].' '.$user['lastname']; ?>
-	        								
-	        							</h6> </p>
-	        							<p><h6><b>Email:</b><?php echo $user['email']; ?></h6></p>
-	        							<p><h6><b>Contact Info:</b><?php echo (!empty($user['contact_info'])) ? $user['contact_info'] : 'N/a'; ?></h6></p>
-	        							<p><h6><b>Address:</b><?php echo (!empty($user['address'])) ? $user['address'] : 'N/a'; ?></h6></p>
-	        							<p><h6><b>Member Since:</b><?php echo date('M d, Y', strtotime($user['created_on'])); ?></h6></p>
-	        						</div>
 	        						<div class="col-sm-3">
-	        							<span class="pull-right">
+	        							<h4>Name:</h4>
+	        							<h4>Email:</h4>
+	        							<h4>Contact Info:</h4>
+	        							<h4>Address:</h4>
+	        							<h4>Member Since:</h4>
+	        						</div>
+	        						<div class="col-sm-9">
+	        							<h4><?php echo $user['firstname'].' '.$user['lastname']; ?>
+	        								<span class="pull-right">
 	        									<a href="#edit" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
 	        								</span>
-	        							
-	        							
-	        							
-	        							
+	        							</h4>
+	        							<h4><?php echo $user['email']; ?></h4>
+	        							<h4><?php echo (!empty($user['contact_info'])) ? $user['contact_info'] : 'N/a'; ?></h4>
+	        							<h4><?php echo (!empty($user['address'])) ? $user['address'] : 'N/a'; ?></h4>
+	        							<h4><?php echo date('M d, Y', strtotime($user['created_on'])); ?></h4>
 	        						</div>
 	        					</div>
 	        				</div>
@@ -77,6 +77,7 @@
 	        						<th>Transaction#</th>
 	        						<th>Amount</th>
 	        						<th>Full Details</th>
+	        						
 	        					</thead>
 	        					<tbody>
 	        					<?php
@@ -101,6 +102,7 @@
 	        										<td>&#36; ".number_format($total, 2)."</td>
 	        										<td><button class='btn btn-sm btn-flat btn-info transact' data-id='".$row['id']."'><i class='fa fa-search'></i> View</button></td>
 	        									</tr>
+
 	        								";
 	        							}
 

@@ -1054,6 +1054,11 @@ footer {
     .mail_form{
       width: 750px;
     }
+      .sel{
+        width: 100%;
+        height: 40px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
 
     /*
  * Component: Main Header
@@ -1298,3 +1303,9 @@ width: 100%;
     border: 1px solid #f3f3f3;
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
         padding: 30px;
+      }
+
+
+
+
+

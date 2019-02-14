@@ -8,6 +8,7 @@
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
 		$email = $_POST['email'];
+		$type=$_POST['type'];
 		$password = $_POST['password'];
 		$repassword = $_POST['repassword'];
 
@@ -40,8 +41,8 @@
 				$code=substr(str_shuffle($set), 0, 12);
 
 				try{
-					$stmt = $conn->prepare("INSERT INTO users (email, password, firstname, lastname, activate_code, created_on) VALUES (:email, :password, :firstname, :lastname, :code, :now)");
-					$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'code'=>$code, 'now'=>$now]);
+					$stmt = $conn->prepare("INSERT INTO users (email, password,type, firstname, lastname, activate_code, created_on) VALUES (:email, :password, :type, :firstname, :lastname, :code, :now)");
+					$stmt->execute(['email'=>$email, 'password'=>$password, 'type'=>$type, 'firstname'=>$firstname, 'lastname'=>$lastname, 'code'=>$code, 'now'=>$now]);
 					$userid = $conn->lastInsertId();
 
 					$message = "

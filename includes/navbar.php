@@ -7,35 +7,17 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon-menu"></span>
             </button>
-                        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                        <div class="collapse navbar-collapse justify-content-end" >
                             <ul class="navbar-nav navbar-right">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   Explore
-                  an>
-                 </a>
+                                
                                    
                              
                                 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Pages
-                  <span class="icon-arrow-down"></span>
-                </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">About</a>
-                                </li>
-                                <li class="nav-item pull-right">
-                                    <a class="nav-link" href="#">Blog</a>
-                                </li>
                                 
-
+                                
+                                
+                                
+<li>
                                  <?php
             if(isset($_SESSION['user'])){
               $image = (!empty($user['photo'])) ? 'images/'.$user['photo'] : 'images/profile.jpg';
@@ -79,6 +61,7 @@
               ";
             }
           ?>
+          </li>
            <li><a href="login.php" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> Add Listing</a></li>
                             </ul>
                         </div>
