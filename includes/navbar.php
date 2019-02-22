@@ -49,6 +49,36 @@
                 </li>
               ';
             }
+             elseif(isset($_SESSION['land'])){
+              $image = (!empty($land['photo'])) ? 'images/'.$land['photo'] : 'images/profile.jpg';
+              echo '
+                <li class="dropdown user user-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="'.$image.'" class="user-image" alt="User Image">
+                    <span class="hidden-xs" style="color:#ffffff">'.$land['firstname'].' '.$land['lastname'].'</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <!-- User image -->
+                    <li class="user-header">
+                      <img src="'.$image.'" class="img-circle" alt="User Image">
+
+                      <p>
+                        '.$land['firstname'].' '.$land['lastname'].'
+                        <small>Member since '.date('M. Y', strtotime($land['created_on'])).'</small>
+                      </p>
+                    </li>
+                    <li class="user-footer">
+                      <div class="pull-left">
+                        <a href="landprofile.php" class="btn btn-default btn-flat">Profile</a>
+                      </div>
+                      <div class="pull-right">
+                        <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              ';
+            }
             else{
               echo "
                 <li class='nav-item active'>
@@ -62,7 +92,7 @@
             }
           ?>
           </li>
-           <li><a href="login.php" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> Add Listing</a></li>
+           <li><a href="add_listing.php" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> Add Listing</a></li>
                             </ul>
                         </div>
                     </nav>

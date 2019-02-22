@@ -3,6 +3,9 @@
   if(isset($_SESSION['user'])){
   header('location: index.php');
   }
+   if(isset($_SESSION['land'])){
+  header('location: index.php');
+  }
   ?>
 <?php include 'includes/header.php';?>
 <style type="text/css">

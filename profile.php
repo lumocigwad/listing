@@ -3,6 +3,8 @@
 	if(!isset($_SESSION['user'])){
 		header('location: index.php');
 	}
+
+	
 ?>
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition skin-blue layout-top-nav">

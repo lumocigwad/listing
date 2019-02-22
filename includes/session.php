@@ -26,7 +26,7 @@
 		try{
 			$stmt = $conn->prepare("SELECT * FROM users WHERE id=:id");
 			$stmt->execute(['id'=>$_SESSION['land']]);
-			$user = $stmt->fetch();
+			$land = $stmt->fetch();
 		}
 		catch(PDOException $e){
 			echo "There is some problem in connection: " . $e->getMessage();

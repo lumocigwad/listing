@@ -48,8 +48,8 @@
             <div class="form-group">
             <select class="icons  sel" name="type">
       <option value=""  disabled selected>Type of User</option>
-      <option value="0">Landlord</option>
-      <option value="2">User</option>
+      <option value="2">Landlord</option>
+      <option value="0">User</option>
     
     </select>
   </div>

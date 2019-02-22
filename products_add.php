@@ -1,6 +1,7 @@
 <?php
 	include 'includes/session.php';
 	include 'includes/slugify.php';
+	 $lid=$land['id'];
 
 	if(isset($_POST['add'])){
 		$name = $_POST['name'];
@@ -31,15 +32,15 @@
 				move_uploaded_file($_FILES['photo1']['tmp_name'], 'images/'.$new_filename1);
 				$ext2 = pathinfo($filename2, PATHINFO_EXTENSION);
 				$new_filename2 = $slug.'2'.'.'.$ext2;
-				move_uploaded_file($_FILES['photo1']['tmp_name'], 'images/'.$new_filename2);		
+				move_uploaded_file($_FILES['photo2']['tmp_name'], 'images/'.$new_filename2);		
 			}
 			else{
 				$new_filename = '';
 			}
 
 			try{
-				$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, slug, price, photo, photo1, photo2) VALUES (:category, :name, :description, :slug, :price, :photo, :photo1, :photo2)");
-				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'photo'=>$new_filename, 'photo1'=>$new_filename1, 'photo2'=>$new_filename2]);
+				$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, slug, price, photo, photo1, photo2, user_id) VALUES (:category, :name, :description, :slug, :price, :photo, :photo1, :photo2, :userid)");
+				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'photo'=>$new_filename, 'photo1'=>$new_filename1, 'photo2'=>$new_filename2, 'userid'=>$lid]);
 				
 
 			}
@@ -54,6 +55,6 @@
 		$_SESSION['error'] = 'Fill up product form first';
 	}
 
-	header('location: products.php');
+	header('location: landprofile.php');
 
 ?>

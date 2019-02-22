@@ -15,11 +15,14 @@
 			if($row['numrows'] > 0){
 				if($row['status']){
 					if(password_verify($password, $row['password'])){
-						if($row['type']){
+						if($row['type']==1){
 							$_SESSION['admin'] = $row['id'];
 						}
-						else{
+						if($row['type']==0){
 							$_SESSION['user'] = $row['id'];
+						}
+						if($row['type']==2){
+							$_SESSION['land'] = $row['id'];
 						}
 					}
 					else{

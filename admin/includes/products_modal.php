@@ -40,6 +40,7 @@
                   <div class="col-sm-5">
                     <select class="form-control" id="category" name="category" required>
                       <option value="" selected>- Select -</option>
+                       <option value="1">Bedsitter</option>
                     </select>
                   </div>
                 </div>
@@ -54,6 +55,19 @@
 
                   <div class="col-sm-5">
                     <input type="file" id="photo" name="photo">
+                  </div>
+                </div>
+                 <div class="form-group">
+                  <label for="photo" class="col-sm-1 control-label">Photo</label>
+
+                  <div class="col-sm-5">
+                    <input type="file" id="photo" name="photo1">
+                  </div>
+
+                  <label for="photo" class="col-sm-1 control-label">Photo</label>
+
+                  <div class="col-sm-5">
+                    <input type="file" id="photo" name="photo2">
                   </div>
                 </div>
                 <p><b>Description</b></p>

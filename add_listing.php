@@ -1,5 +1,12 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
+<?php
+  if(!isset($_SESSION['land'])){
+    header('location: index.php');
+  }
+
+
+?>
 
 <div class="container justify-content-center">
   <div class="col-md-2"></div>
