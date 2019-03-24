@@ -14,12 +14,16 @@
     <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+<!-- animate css -->
+    <link rel="stylesheet" href="css/animate.css"/>
+<!-- owl carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.css"/>
       <!-- Swipper Slider -->
     <link rel="stylesheet" href="css/swiper.min.css">
      <!-- Magnific Popup CSS -->
     <link rel="stylesheet" href="css/magnific-popup.css">
   <!-- Simple line Icon -->
-    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/">
     <!-- Magnific Popup CSS -->
     <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- Theme style -->
@@ -30,6 +34,8 @@
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
     <!-- Magnify -->
     <link rel="stylesheet" href="magnify/magnify.min.css">
+     <!-- Bootstrap CSS -->
+  
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

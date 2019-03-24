@@ -40,35 +40,58 @@
                   <div class="col-sm-5">
                     <select class="form-control" id="category" name="category" required>
                       <option value="" selected>- Select -</option>
-                       <option value="1">Bedsitter</option>
                     </select>
+                  </div>
+                </div>
+                 <div class="form-group">
+                  <label for="location" class="col-sm-1 control-label">Location</label>
+
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="location" name="location" required>
+                  </div>
+
+                  <label for="Contact" class="col-sm-1 control-label">Contact</label>
+
+                  <div class="col-sm-5">
+                    <input type="number" class="form-control" id="contact" name="contact" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="price" class="col-sm-1 control-label">Price</label>
 
                   <div class="col-sm-5">
-                    <input type="text" class="form-control" id="price" name="price" required>
+                    <input type="number" class="form-control" id="price" name="price" required>
                   </div>
 
-                  <label for="photo" class="col-sm-1 control-label">Photo</label>
+                  <label for="units" class="col-sm-1 control-label">No Of units</label>
 
                   <div class="col-sm-5">
-                    <input type="file" id="photo" name="photo">
+                   <input type="number" class="form-control" id="units" name="units" required>
                   </div>
                 </div>
                  <div class="form-group">
                   <label for="photo" class="col-sm-1 control-label">Photo</label>
 
                   <div class="col-sm-5">
-                    <input type="file" id="photo" name="photo1">
+                    <input type="file" id="photo" name="photo">
                   </div>
 
-                  <label for="photo" class="col-sm-1 control-label">Photo</label>
+                  <label for="photo1" class="col-sm-1 control-label">Photo</label>
 
                   <div class="col-sm-5">
-                    <input type="file" id="photo" name="photo2">
+                    <input type="file" id="photo1" name="photo1">
                   </div>
+                </div>
+                <div class="form-group">
+                  <label for="photo2" class="col-sm-1 control-label">Photo</label>
+
+                  <div class="col-sm-5">
+                    <input type="file" id="photo2" name="photo2">
+                  </div>
+
+                  
+
+                 
                 </div>
                 <p><b>Description</b></p>
                 <div class="form-group">
@@ -104,6 +127,20 @@
 
                     <div class="col-sm-9">
                       <input type="file" id="photo" name="photo" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="photo1" class="col-sm-3 control-label">Photo</label>
+
+                    <div class="col-sm-9">
+                      <input type="file" id="photo1" name="photo1" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="photo2" class="col-sm-3 control-label">Photo</label>
+
+                    <div class="col-sm-9">
+                      <input type="file" id="photo2" name="photo2" required>
                     </div>
                 </div>
             </div>

@@ -52,10 +52,28 @@
                   </div>
                 </div>
                 <div class="form-group">
+                  <label for="edit_location" class="col-sm-1 control-label">Location</label>
+
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="edit_location" name="location" required>
+                  </div>
+
+                  <label for="edit_contact" class="col-sm-1 control-label">Contact</label>
+
+                  <div class="col-sm-5">
+                    <input type="number" class="form-control" id="edit_contact" name="contact" required>
+                  </div>
+                </div>
+                <div class="form-group">
                   <label for="edit_price" class="col-sm-1 control-label">Price</label>
 
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="edit_price" name="price">
+                  </div>
+                  <label for="units" class="col-sm-1 control-label">No Of units</label>
+
+                  <div class="col-sm-5">
+                   <input type="number" class="form-control" id="edit_units" name="units" required>
                   </div>
                 </div>
                 <p><b>Description</b></p>

@@ -7,8 +7,17 @@
 	 $lid=$land['id'];
 
 ?>
+<?php
+  $where = '';
+  if(isset($_GET['category'])){
+    $catid = $_GET['category'];
+    $where = 'WHERE category_id ='.$catid;
+  }
+
+?>
+
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition  layout-top-nav">
 <div class="wrapper">
 
 	<?php include 'includes/navbar.php'; ?>
@@ -39,6 +48,7 @@
 	        				unset($_SESSION['success']);
 	        			}
 	        		?>
+
 	        		<div class="box box-solid">
 	        			<div class="box-body">
 	        				<div class="col-sm-3">
@@ -46,23 +56,16 @@
 	        				</div>
 	        				<div class="col-sm-9">
 	        					<div class="row">
-	        						<div class="col-sm-3">
-	        							<h4>Name:</h4>
-	        							<h4>Email:</h4>
-	        							<h4>Contact Info:</h4>
-	        							<h4>Address:</h4>
-	        							<h4>Member Since:</h4>
-	        						</div>
-	        						<div class="col-sm-9">
-	        							<h4><?php echo $land['firstname'].' '.$land['lastname']; ?>
-	        								<span class="pull-right">
-	        									<a href="#edit" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
-	        								</span>
-	        							</h4>
-	        							<h4><?php echo $land['email']; ?></h4>
-	        							<h4><?php echo (!empty($land['contact_info'])) ? $land['contact_info'] : 'N/a'; ?></h4>
-	        							<h4><?php echo (!empty($land['address'])) ? $land['address'] : 'N/a'; ?></h4>
-	        							<h4><?php echo date('M d, Y', strtotime($land['created_on'])); ?></h4>
+	        						<div class="col-sm-12">
+                    <h4><b>Name: </b>&nbsp;<?php echo $land['firstname'].' '.$land['lastname']; ?>
+                          <span class="pull-right">
+                            <a href="#edit" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
+                          </span>
+                        </h4>
+                      <h4><b>Email: </b>&nbsp;<?php echo $land['email']; ?></h4>
+                      <h4><b>Contact Info:</b> &nbsp;<?php echo (!empty($land['contact_info'])) ? $land['contact_info'] : 'N/a'; ?></h4>
+                       <h4><b>Address:</b> &nbsp;<?php echo (!empty($land['address'])) ? $land['address'] : 'N/a'; ?></h4>
+                          <h4><b>Member Since:</b> &nbsp;<?php echo date('M d, Y', strtotime($land['created_on'])); ?></h4>
 	        						</div>
 	        					</div>
 	        				</div>
@@ -103,7 +106,7 @@
           <div class="box">
             <div class="box-header with-border">
               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> New</a>
-              
+            
             </div>
            <div class="box-body">
               <table id="example1" class="table table-bordered">
@@ -119,9 +122,9 @@
                   <?php
                     $conn = $pdo->open();
 
-                    try{
+                       try{
                       $now = date('Y-m-d');
-                      $stmt = $conn->prepare("SELECT * FROM products WHERE user_id=$lid");
+                      $stmt = $conn->prepare("SELECT * FROM products WHERE userid=$lid");
                       $stmt->execute();
                       foreach($stmt as $row){
                         $image = (!empty($row['photo'])) ? 'images/'.$row['photo'] : 'images/noimage.jpg';
@@ -174,13 +177,14 @@
 	  </div>
 
   
-  	<?php include 'includes/footer.php'; ?>
-  	<?php include 'includes/profie_modal.php'; ?>
-  	<?php include 'admin/includes/products_modal.php'; ?>
-    <?php include 'admin/includes/products_modal2.php'; ?>
+  
 </div>
-
+  <?php include 'includes/footer.php'; ?>
+    <?php include 'includes/profile_modal.php'; ?>
+    <?php include 'admin/includes/products_modal.php'; ?>
+    <?php include 'admin/includes/products_modal2.php'; ?>
 <?php include 'includes/scripts2.php'; ?>
+
 
 
 <script>
@@ -246,6 +250,9 @@ function getRow(id){
       $('#desc').html(response.description);
       $('.name').html(response.prodname);
       $('.prodid').val(response.prodid);
+      $('#edit_location').val(response.location);
+       $('#edit_contact').val(response.contact);
+       $('#edit_units').val(response.units);
       $('#edit_name').val(response.prodname);
       $('#catselected').val(response.category_id).html(response.catname);
       $('#edit_price').val(response.price);

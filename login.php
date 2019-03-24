@@ -37,7 +37,7 @@
       }
     ?>   
     <form action="verify.php" method="POST">
-		<div class="avatar"><i class="icon-user"></i></div>
+		<div class="avatar"><i class="fa fa-user"></i></div>
     	<h4 class="modal-title">Login to Your Account</h4>
         <div class="form-group">
             <input type="email" class="form-control" placeholder="Username" name="email" required="required">

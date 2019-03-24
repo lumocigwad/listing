@@ -42,6 +42,12 @@
         <div class="form-group">
             <input type="text" class="form-control" name="lastname" placeholder="Lastname" value="<?php echo (isset($_SESSION['lastname'])) ? $_SESSION['lastname'] : '' ?>"  required>
         </div>
+         <div class="form-group">
+            <input type="number" class="form-control" name="contact" placeholder="contact" value="<?php echo (isset($_SESSION['contact'])) ? $_SESSION['contact'] : '' ?>"  required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="address" placeholder="Address" value="<?php echo (isset($_SESSION['address'])) ? $_SESSION['address'] : '' ?>"  required>
+        </div>
         <div class="form-group">
             <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo (isset($_SESSION['email'])) ? $_SESSION['email'] : '' ?>" required>
              </div>

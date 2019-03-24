@@ -1,21 +1,23 @@
 
+ 
  <section class="main-block light-bg">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center ">
                 <div class="col-md-5">
-                    <div class="styled-heading">
+                    <div class="styled-heading ">
                         <h3>Featured Places</h3>
                     </div>
                 </div>
             </div>
-            
+             <div class="row">
+         <div class="col-md-10">
                             <?php
 
                             $conn=$pdo->open();
 
                             try{
                                 $inc=3;
-                                $stmt=$conn->prepare("SELECT * FROM products WHERE category_id ='1'");
+                                $stmt=$conn->prepare("SELECT * FROM products WHERE units>0 ");
                                 $stmt->execute();
                                 foreach ($stmt as $row) {
                                     $image=(!empty($row['photo']))? 'images/' .$row['photo'] : 'images/noimage.jpg';
@@ -31,25 +33,21 @@
                             <div class='featured-title-box'>
                                 <h6><a href='detail.php?product=".$row['slug']."'>".$row['name']."</h6>
                                 <p>Restaurant </p> <span>• </span>
-                                <p>3 Reviews</p> <span> • </span>
+                                <p></p> <span> • </span>
                                 <p><b>KSH".number_format($row['price'], 2)."</b></p>
                                 <ul>
                                     <li><span class='icon-location-pin'></span>
-                                        <p>1301 Avenue, Brooklyn, NY 11230</p>
+                                        <p><b>Located at:  </b>".$row['location']."</p>
                                     </li>
                                     <li><span class='icon-screen-smartphone'></span>
-                                        <p>+44 20 7336 8898</p>
+                                        <p>".$row['contact']."</p>
                                     </li>
                                     <li><span class='icon-link'></span>
-                                        <p>https://burgerandlobster.com</p>
+                                        <p>".$row['units']." <span style='color:#006400;font-weight:bold;'>Units available<span></p>
                                     </li>
 
                                 </ul>
-                                <div class='bottom-icons'>
-                                    <div class='closed-now'>CLOSED NOW</div>
-                                    <span class='ti-heart'></span>
-                                    <span class='ti-bookmark'></span>
-                                </div>
+                               
                             </div>
                         </a>
                     </div>
@@ -70,7 +68,13 @@
                     ?> 
                                                            
                
-                                
+                       </div>
+                       <div class="col-sm-2">
+                    <?php include 'includes/sidebar.php'; ?>
+                </div>
+                           
+                       </div> 
+
                        
                     </div>
                     <div class="container">

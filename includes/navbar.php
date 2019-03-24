@@ -1,31 +1,80 @@
-<div class="dark-bg sticky-top bg">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.php">Listing</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon-menu"></span>
-            </button>
-                        <div class="collapse navbar-collapse justify-content-end" >
-                            <ul class="navbar-nav navbar-right">
-                                
-                                   
-                             
-                                
-                                
-                                
-                                
-                                
-<li>
-                                 <?php
+<header class="main-header dark-bg">
+  <nav class="navbar navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="index.php" class="navbar-brand"><b>iHostel</b></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.php">HOME</a></li>
+          <li><a href="">ABOUT US</a></li>
+          <li><a href="">CONTACT US</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CATEGORY <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <?php
+             
+                $conn = $pdo->open();
+                try{
+                  $stmt = $conn->prepare("SELECT * FROM category");
+                  $stmt->execute();
+                  foreach($stmt as $row){
+                    echo "
+                      <li><a href='category.php?category=".$row['cat_slug']."'>".$row['name']."</a></li>
+                    ";                  
+                  }
+                }
+                catch(PDOException $e){
+                  echo "There is some problem in connection: " . $e->getMessage();
+                }
+
+                $pdo->close();
+
+              ?>
+            </ul>
+          </li>
+        </ul>
+        <form method="POST" class="navbar-form navbar-left" action="search.php">
+          <div class="input-group">
+              <input type="text" class="form-control" id="navbar-search-input" name="keyword" placeholder="Search for Product" required>
+              <span class="input-group-btn" id="searchBtn" >
+                  <button type="submit" class="btn btn-default btn-flat"><i class="fa fa-search"></i> </button>
+              </span>
+          </div>
+        </form>
+      </div>
+      <!-- /.navbar-collapse -->
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown messages-menu">
+            <!-- Menu toggle button -->
+            <a href="#" class="dropdown-toggle cl" data-toggle="dropdown">
+              <i class="fa fa-shopping-cart"></i>
+              <span class="label label-success cart_count"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have <span class="cart_count"></span> item(s) in cart</li>
+              <li>
+                <ul class="menu" id="cart_menu">
+                </ul>
+              </li>
+              <li class="footer"><a href="cart_view.php">Go to Cart</a></li>
+            </ul>
+          </li>
+          <?php
             if(isset($_SESSION['user'])){
               $image = (!empty($user['photo'])) ? 'images/'.$user['photo'] : 'images/profile.jpg';
               echo '
-                <li class="dropdown user user-menu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="'.$image.'" class="user-image" alt="User Image">
-                    <span class="hidden-xs" style="color:#ffffff">'.$user['firstname'].' '.$user['lastname'].'</span>
+                <li class="dropdown user user-menu " >
+                  <a href="#" class="dropdown-toggle " data-toggle="dropdown">
+                    <img src="'.$image.'" class="user-image " alt="User Image">
+                    <span class="hidden-xs cl " >'.$user['firstname'].' '.$user['lastname'].'</span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- User image -->
@@ -49,13 +98,13 @@
                 </li>
               ';
             }
-             elseif(isset($_SESSION['land'])){
+            elseif(isset($_SESSION['land'])){
               $image = (!empty($land['photo'])) ? 'images/'.$land['photo'] : 'images/profile.jpg';
               echo '
                 <li class="dropdown user user-menu">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img src="'.$image.'" class="user-image" alt="User Image">
-                    <span class="hidden-xs" style="color:#ffffff">'.$land['firstname'].' '.$land['lastname'].'</span>
+                    <span class="hidden-xs cl">'.$land['firstname'].' '.$land['lastname'].'</span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- User image -->
@@ -78,25 +127,18 @@
                   </ul>
                 </li>
               ';
-            }
-            else{
-              echo "
-                <li class='nav-item active'>
-                                    <a class='nav-link' href='login.php'> Login</a>
-                                </li>
-                                <li class='nav-item'>
-                                    <a class='nav-link' href='signup.php'>Signup</a>
-                                </li>
 
+               }
+           else{
+              echo "
+                <li><a href='login.php' class='cl'>LOGIN</a></li>
+                <li><a href='signup.php' class='cl'>SIGNUP</a></li>
               ";
             }
           ?>
-          </li>
-           <li><a href="add_listing.php" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> Add Listing</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+          <li><a href="add_listing.php" class="cl">ADD LISTING</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
+</header>

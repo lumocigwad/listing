@@ -8,6 +8,9 @@
 		$slug = slugify($name);
 		$category = $_POST['category'];
 		$price = $_POST['price'];
+		$location = $_POST['location'];
+		$contact = $_POST['contact'];
+		$units = $_POST['units'];
 		$description = $_POST['description'];
 		$filename = $_FILES['photo']['name'];
 		$filename1 = $_FILES['photo1']['name'];
@@ -39,9 +42,10 @@
 			}
 
 			try{
-				$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, slug, price, photo, photo1, photo2, user_id) VALUES (:category, :name, :description, :slug, :price, :photo, :photo1, :photo2, :userid)");
-				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'photo'=>$new_filename, 'photo1'=>$new_filename1, 'photo2'=>$new_filename2, 'userid'=>$lid]);
-				
+				$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, slug, price, photo, photo1, photo2, contact, location, units, userid ) VALUES (:category, :name, :description, :slug, :price, :photo, :photo1, :photo2, :contact, :location, :units, :userid)");
+				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'photo'=>$new_filename, 'photo1'=>$new_filename1, 'photo2'=>$new_filename2, 'contact'=>$contact, 'location'=>$location, 'units'=>$units, 'userid'=>$lid]);
+				$_SESSION['success'] = 'Hostel added successfully';
+
 
 			}
 			catch(PDOException $e){

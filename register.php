@@ -8,6 +8,8 @@
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
 		$email = $_POST['email'];
+		$contact = $_POST['contact'];
+		$address = $_POST['address'];
 		$type=$_POST['type'];
 		$password = $_POST['password'];
 		$repassword = $_POST['repassword'];
@@ -15,6 +17,8 @@
 		$_SESSION['firstname'] = $firstname;
 		$_SESSION['lastname'] = $lastname;
 		$_SESSION['email'] = $email;
+		$_SESSION['address'] = $address;
+		$_SESSION['contact'] = $contact;
 
 		
 
@@ -41,8 +45,8 @@
 				$code=substr(str_shuffle($set), 0, 12);
 
 				try{
-					$stmt = $conn->prepare("INSERT INTO users (email, password,type, firstname, lastname, activate_code, created_on) VALUES (:email, :password, :type, :firstname, :lastname, :code, :now)");
-					$stmt->execute(['email'=>$email, 'password'=>$password, 'type'=>$type, 'firstname'=>$firstname, 'lastname'=>$lastname, 'code'=>$code, 'now'=>$now]);
+					$stmt = $conn->prepare("INSERT INTO users (email, password,type, firstname, lastname, activate_code, created_on, contact_info, address) VALUES (:email, :password, :type, :firstname, :lastname, :code, :now, :contact, :address)");
+					$stmt->execute(['email'=>$email, 'password'=>$password, 'type'=>$type, 'firstname'=>$firstname, 'lastname'=>$lastname, 'code'=>$code, 'now'=>$now, 'contact'=>$contact,'address'=>$address]);
 					$userid = $conn->lastInsertId();
 
 					$message = "
@@ -57,7 +61,8 @@
 					//Load phpmailer
 		    		require 'vendor/autoload.php';
 
-		    		$mail = new PHPMailer(true);                             
+		    		$mail = new PHPMailer(true);
+		    		                           
 				    try {
 				        //Server settings
 				        $mail->isSMTP();                                     
@@ -121,3 +126,4 @@
 	}
 
 ?>
+
