@@ -48,7 +48,7 @@
 	        						<div class="col-sm-12">
 	        							<h4><b>Name:</b> &nbsp;<?php echo $user['firstname'].' '.$user['lastname']; ?>
                           <span class="pull-right">
-                            <a href="#edit" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
+                            <a href="#edit2 " class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
                           </span>
                         </h4>
                       <h4><b>Email:</b> &nbsp;<?php echo $user['email']; ?></h4>
