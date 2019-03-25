@@ -55,7 +55,7 @@
 						<p>Email: ".$email."</p>
 						<p>Password: ".$_POST['password']."</p>
 						<p>Please click the link below to activate your account.</p>
-						<a href='http://localhost/ecommerce/activate.php?code=".$code."&user=".$userid."'>Activate Account</a>
+						<a href='http://localhost/listing/activate.php?code=".$code."&user=".$userid."'>Activate Account</a>
 					";
 
 					//Load phpmailer
@@ -68,8 +68,8 @@
 				        $mail->isSMTP();                                     
 				        $mail->Host = 'smtp.gmail.com';                      
 				        $mail->SMTPAuth = true;                               
-				        $mail->Username = 'testsourcecodester@gmail.com';     
-				        $mail->Password = 'mysourcepass';                    
+				        $mail->Username = 'dennis.lumosi@gmail.com';     
+				        $mail->Password = 'Science6';                    
 				        $mail->SMTPOptions = array(
 				            'ssl' => array(
 				            'verify_peer' => false,
@@ -77,10 +77,10 @@
 				            'allow_self_signed' => true
 				            )
 				        );                         
-				        $mail->SMTPSecure = 'ssl';                           
-				        $mail->Port = 465;                                   
+				        $mail->SMTPSecure = 'tls';                           
+				        $mail->Port = 587;                                   
 
-				        $mail->setFrom('testsourcecodester@gmail.com');
+				       $mail->setFrom('lumocigwad@gmail.com', 'iHostel');
 				        
 				        //Recipients
 				        $mail->addAddress($email);              
@@ -88,7 +88,7 @@
 				       
 				        //Content
 				        $mail->isHTML(true);                                  
-				        $mail->Subject = 'ECommerce Site Sign Up';
+				        $mail->Subject = 'iHoste Sign Up';
 				        $mail->Body    = $message;
 
 				        $mail->send();
