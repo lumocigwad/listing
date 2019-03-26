@@ -20,7 +20,8 @@
 	    	<ul>
 	  	</div>
 	</div>
-</div>
+</div> 
+<!--
 
 <div class="row">
 	<div class="box box-solid">
@@ -55,3 +56,4 @@
 	  	</div>
 	</div>
 </div>
+ -->

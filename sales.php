@@ -36,6 +36,7 @@
 		catch(PDOException $e){
 			$_SESSION['error'] = $e->getMessage();
 		}
+		
 
 		$pdo->close();
 	}

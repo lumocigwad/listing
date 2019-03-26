@@ -35,7 +35,7 @@
 	    		$mail = new PHPMailer(true);                             
 			    try {
 			        //Server settings
-			        $mail->isSMTP();                                     
+			      /*  $mail->isSMTP();                                     
 			        $mail->Host = 'smtp.gmail.com';                      
 			        $mail->SMTPAuth = true;                               
 			        $mail->Username = 'dennis.lumosi@gmail.com';     
@@ -48,7 +48,7 @@
 			            )
 			        );                         
 			        $mail->SMTPSecure = 'tls';                           
-			        $mail->Port = 587;                                   
+			        $mail->Port = 587;    */                               
 
 			        $mail->setFrom('info@ihostel.com');
 			        

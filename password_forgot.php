@@ -31,7 +31,7 @@
         <div class="form-group">
             <input type="email" class="form-control" placeholder="Email" name="email" required="required">
         </div>
-        
+         
         
         <input type="submit" class="btn btn-primary btn-block btn-lg" value="SEND" name="reset">  <br>
 

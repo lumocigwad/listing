@@ -6,8 +6,9 @@
   }
 ?>
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition login-page">
-<div class="login-box">
+<body class="hold-transition login-page layout-top-nav">
+  <?php include 'includes/navbar.php'; ?> 
+<div class="login-form mail_form">
   	<?php
       if(isset($_SESSION['error'])){
         echo "
@@ -19,7 +20,7 @@
       }
     ?>
   	<div class="login-box-body">
-    	<p class="login-box-msg">Enter new password</p>
+<h4 class="modal-title">Enter your new password</h4>
 
     	<form action="password_new.php?code=<?php echo $_GET['code']; ?>&user=<?php echo $_GET['user']; ?>" method="POST">
       		<div class="form-group has-feedback">
@@ -38,6 +39,7 @@
     	</form>
   	</div>
 </div>
+<?php include 'includes/footer.php' ?>
 	
 <?php include 'includes/scripts.php' ?>
 </body>

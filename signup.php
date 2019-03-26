@@ -34,7 +34,7 @@
       }
     ?>   
     <form action="register.php" method="POST">
-		<div class="avatar"><i class="icon-user"></i></div>
+		<div class="avatar"><i class="fa fa-user"></i></div>
     	<h4 class="modal-title">Register New Membership</h4>
         <div class="form-group">
              <input type="text" class="form-control" name="firstname" placeholder="Firstname" value="<?php echo (isset($_SESSION['firstname'])) ? $_SESSION['firstname'] : '' ?>" required>

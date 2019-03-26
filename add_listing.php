@@ -1,3 +1,4 @@
+<?php include 'includes/header.php'; ?>
 <?php include 'includes/session.php'; ?>
 
 <?php include 'includes/navbar.php' ?>
@@ -8,6 +9,7 @@
 
 
 ?>
+
 <html>
 
 <body class="layout-top-nav">
