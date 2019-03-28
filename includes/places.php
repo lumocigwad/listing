@@ -32,7 +32,7 @@
                             
                             <div class='featured-title-box'>
                                 <h6><a href='detail.php?product=".$row['slug']."'>".$row['name']."</h6>
-                                <p>Restaurant </p> <span>• </span>
+                               
                                 <p></p> <span> • </span>
                                 <p><b>KSH".number_format($row['price'], 2)."</b></p>
                                 <ul>

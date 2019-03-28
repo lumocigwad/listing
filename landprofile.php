@@ -187,7 +187,7 @@
                         $stmt = $conn->prepare("SELECT * FROM sales WHERE user_id=:user_id ORDER BY sales_date DESC");
                         $stmt->execute(['user_id'=>$user['id']]);
                         foreach($stmt as $row){
-                          $stmt2 = $conn->prepare("SELECT * FROM details LEFT JOIN products ON products.id=details.product_id WHERE sales_id=:id");
+                          $stmt2 = $conn->prepare("SELECT * FROM details LEFT JOIN products ON products.id=details.product_id WHERE sales_id=:id AND ");
                           $stmt2->execute(['id'=>$row['id']]);
                           $total = 0;
                           foreach($stmt2 as $row2){

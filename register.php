@@ -98,7 +98,7 @@
 				        unset($_SESSION['email']);
 
 				        $_SESSION['success'] = 'Account created. Check your email to activate.';
-				        header('location: signup.php');
+				        header('location: login.php');
 
 				    } 
 				    catch (Exception $e) {

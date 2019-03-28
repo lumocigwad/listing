@@ -32,7 +32,7 @@
 
 					$_SESSION['success'] = 'Password successfully reset';
 					header('location: login.php');
-				}
+				} 
 				catch(PDOException $e){
 					$_SESSION['error'] = $e->getMessage();
 					header('location: '.$path);

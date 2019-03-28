@@ -43,6 +43,11 @@
 	        			}
 	        		?>
 	        	</div>
+	        	<?php  
+	        	echo "
+	        	<h6><a href='test.php?w=".$row['productid']."'>done</h6>"?>
+
+	        
 	        	<div class="col-sm-3">
 	        		<?php include 'includes/sidebar.php'; ?>
 	        	</div>

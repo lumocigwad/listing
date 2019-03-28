@@ -12,6 +12,9 @@
 			$stmt = $conn->prepare("INSERT INTO sales (user_id, pay_id, sales_date) VALUES (:user_id, :pay_id, :sales_date)");
 			$stmt->execute(['user_id'=>$user['id'], 'pay_id'=>$payid, 'sales_date'=>$date]);
 			$salesid = $conn->lastInsertId();
+
+
+
 			
 			try{
 				$stmt = $conn->prepare("SELECT * FROM cart LEFT JOIN products ON products.id=cart.product_id WHERE user_id=:user_id");
@@ -20,6 +23,10 @@
 				foreach($stmt as $row){
 					$stmt = $conn->prepare("INSERT INTO details (sales_id, product_id, quantity) VALUES (:sales_id, :product_id, :quantity)");
 					$stmt->execute(['sales_id'=>$salesid, 'product_id'=>$row['product_id'], 'quantity'=>$row['quantity']]);
+
+
+					$stmt2 = $conn->prepare("UPDATE products SET units=:units WHERE id=:id");
+					$stmt2->execute(['units'=>$row['units']-1, 'id'=>$row['product_id']]);
 				}
 
 				$stmt = $conn->prepare("DELETE FROM cart WHERE user_id=:user_id");
