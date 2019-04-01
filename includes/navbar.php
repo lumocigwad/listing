@@ -1,5 +1,5 @@
 <header class="main-header dark-bg">
-  <nav class="navbar navbar-static-top">
+  <nav class="navbar navbar-static-top navbar-fixed-top dark-bg">
     <div class="container">
       <div class="navbar-header">
         <a href="index.php" class="navbar-brand"><b>iHostel</b></a>

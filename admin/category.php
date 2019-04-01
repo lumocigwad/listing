@@ -1,13 +1,13 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition  sidebar-mini" style="background: #000000; ">
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background: #000000;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -15,8 +15,8 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li>Products</li>
-        <li class="active">Category</li>
+        <li><a href="">Products</a></li>
+        <li >Category</li>
       </ol>
     </section>
 

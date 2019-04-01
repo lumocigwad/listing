@@ -23,9 +23,11 @@
 		                        <small>&times; ".$row['quantity']."</small>
 		                    </h4>
 		                    <p>".$productname."</p>
+		                    
 						</a>
 					</li>
 				";
+				
 			}
 		}
 		catch(PDOException $e){

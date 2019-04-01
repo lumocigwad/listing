@@ -33,7 +33,7 @@
 			$stmt->execute(['email'=>$email]);
 			$row = $stmt->fetch();
 			if($row['numrows'] > 0){
-				$_SESSION['error'] = 'Email already taken';
+				$_SESSION['error'] = '<h2> The Email you entered already exists </h2>';
 				header('location: signup.php');
 			}
 			else{
@@ -97,12 +97,12 @@
 				        unset($_SESSION['lastname']);
 				        unset($_SESSION['email']);
 
-				        $_SESSION['success'] = 'Account created. Check your email to activate.';
+				        $_SESSION['success'] = '<h2> Account created. Check your email to activate. </h2>';
 				        header('location: login.php');
 
 				    } 
 				    catch (Exception $e) {
-				        $_SESSION['error'] = 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo;
+				        $_SESSION['error'] = '<h2> Message could not be sent. Mailer Error: </h2>'.$mail->ErrorInfo;
 				        header('location: signup.php');
 				    }
 

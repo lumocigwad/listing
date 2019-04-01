@@ -1,6 +1,6 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition layout-top-nav">
+<body class="hold-transition  layout-top-nav">
 <div class="wrapper">
 
 	<?php include 'includes/navbar.php'; ?>
@@ -11,7 +11,7 @@
 	      <!-- Main content -->
 	      <section class="content">
 	        <div class="row">
-	        	<div class="col-sm-9">
+	        	<div class="col-sm-12">
 	        		<h1 class="page-header">YOUR CART</h1>
 	        		<div class="box box-solid">
 	        			<div class="box-body">
@@ -29,11 +29,12 @@
 		        		</table>
 	        			</div>
 	        		</div>
-	        		
 	        		<?php
 	        			if(isset($_SESSION['user'])){
 	        				echo "
 	        					<div id='paypal-button'></div>
+	        					
+
 	        				";
 	        			}
 	        			else{
@@ -43,14 +44,9 @@
 	        			}
 	        		?>
 	        	</div>
-	        	<?php  
-	        	echo "
-	        	<h6><a href='test.php?w=".$row['productid']."'>done</h6>"?>
-
-	        
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
-	        	</div>
+	        	<!-- <div class="col-sm-3">
+	        		// <?php //include 'includes/sidebar.php'; ?>
+	        	</div> -->
 	        </div>
 	      </section>
 	     
@@ -167,7 +163,6 @@ paypal.Button.render({
 
 	client: {
         sandbox:    'ASb1ZbVxG5ZFzCWLdYLi_d1-k5rmSjvBZhxP2etCxBKXaJHxPba13JJD_D3dTNriRbAv3Kp_72cgDvaZ',
-        	
         //production: 'AaBHKJFEej4V6yaArjzSx9cuf-UYesQYKqynQVCdBlKuZKawDDzFyuQdidPOBSGEhWaNQnnvfzuFB9SM'
     },
 

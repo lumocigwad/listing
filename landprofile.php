@@ -22,13 +22,13 @@
 
 	<?php include 'includes/navbar.php'; ?>
 	 
-	  <div class="content-wrapper">
+	  <div class="content-wrapper" style="margin-top:60px; ">
 	    <div class="container">
 
 	      <!-- Main content -->
 	      <section class="content">
 	        <div class="row">
-	        	<div class="col-sm-9">
+	        	<div class="col-sm-12">
 	        		<?php
 	        			if(isset($_SESSION['error'])){
 	        				echo "
@@ -164,8 +164,7 @@
         </div>
       </div>
     </section>
-     
-  </div><div class="box box-solid">
+    <div class="box box-solid">
                 <div class="box-header with-border">
                   <h4 class="box-title"><i class="fa fa-calendar"></i> <b>Transaction History</b></h4>
                 </div>
@@ -184,10 +183,10 @@
                       $conn = $pdo->open();
 
                       try{
-                        $stmt = $conn->prepare("SELECT * FROM sales WHERE user_id=:user_id ORDER BY sales_date DESC");
-                        $stmt->execute(['user_id'=>$user['id']]);
+                        $stmt = $conn->prepare("SELECT * FROM sales WHERE land_id=:user_id ORDER BY sales_date DESC");
+                        $stmt->execute(['user_id'=>$land['id']]);
                         foreach($stmt as $row){
-                          $stmt2 = $conn->prepare("SELECT * FROM details LEFT JOIN products ON products.id=details.product_id WHERE sales_id=:id AND ");
+                          $stmt2 = $conn->prepare("SELECT * FROM details LEFT JOIN products ON products.id=details.product_id WHERE sales_id=:id");
                           $stmt2->execute(['id'=>$row['id']]);
                           $total = 0;
                           foreach($stmt2 as $row2){
@@ -217,11 +216,16 @@
                   </table>
                 </div>
               </div>
+     
+  </div>
   
 	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
-	        	</div>
+
+
+
+	        	<!-- <div class="col-sm-3">
+	        		<?php // include 'includes/sidebar.php'; ?>
+	        	</div> -->
 	        </div>
 	      </section>
 	     
@@ -324,6 +328,31 @@ function getCategory(){
     }
   });
 }
+</script>
+<script>
+$(function(){
+  $(document).on('click', '.transact', function(e){
+    e.preventDefault();
+    $('#transaction').modal('show');
+    var id = $(this).data('id');
+    $.ajax({
+      type: 'POST',
+      url: 'transaction.php',
+      data: {id:id},
+      dataType: 'json',
+      success:function(response){
+        $('#date').html(response.date);
+        $('#transid').html(response.transaction);
+        $('#detail').prepend(response.list);
+        $('#total').html(response.total);
+      }
+    });
+  });
+
+  $("#transaction").on("hidden.bs.modal", function () {
+      $('.prepend_items').remove();
+  });
+});
 </script>
 </body>
 </html>

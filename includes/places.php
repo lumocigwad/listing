@@ -1,16 +1,24 @@
-
- 
+<div class="container">
+    <div class="row center-block">
+ <form method="POST" class="center-block" action="search.php">
+             <div class=" btn-group" role="group" aria-label="Basic example">
+            <input type="text" placeholder="What are your looking for?" class="btn-group1"  name="keyword" required="">
+            <button type="submit" class="btn-form"><span class="fa fa-search"></span>SEARCH</i></button>
+                                    </div></form> </div></div>
  <section class="main-block light-bg">
+
         <div class="container">
-            <div class="row justify-content-center ">
-                <div class="col-md-5">
+            <div class="row center-block ">
+
+                <div class="center-block">
+                    
                     <div class="styled-heading ">
-                        <h3>Featured Places</h3>
+                        <h3> Places</h3>
                     </div>
                 </div>
             </div>
              <div class="row">
-         <div class="col-md-10">
+         <div class="col-md-12">
                             <?php
 
                             $conn=$pdo->open();
@@ -34,7 +42,7 @@
                                 <h6><a href='detail.php?product=".$row['slug']."'>".$row['name']."</h6>
                                
                                 <p></p> <span> • </span>
-                                <p><b>KSH".number_format($row['price'], 2)."</b></p>
+                                <p><b><span>KSH  </span>".number_format($row['price'], 2)."</b></p>
                                 <ul>
                                     <li><span class='icon-location-pin'></span>
                                         <p><b>Located at:  </b>".$row['location']."</p>
@@ -43,7 +51,7 @@
                                         <p>".$row['contact']."</p>
                                     </li>
                                     <li><span class='icon-link'></span>
-                                        <p>".$row['units']." <span style='color:#006400;font-weight:bold;'>Units available<span></p>
+                                        <p>".$row['units']." <span style='color:#006400;font-weight:bold;'>Rooms available<span></p>
                                     </li>
 
                                 </ul>
@@ -69,9 +77,7 @@
                                                            
                
                        </div>
-                       <div class="col-sm-2">
-                    <?php include 'includes/sidebar.php'; ?>
-                </div>
+                       
                            
                        </div> 
 

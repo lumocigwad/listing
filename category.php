@@ -25,8 +25,8 @@
 	 
 	  <section class="main-block light-bg">
         <div class="container">
-            <div class="row justify-content-center ">
-                <div class="col-md-5">
+            <div class="row center-block ">
+                <div class="center-block">
                     <div class="styled-heading ">
 		            <h3 ><?php echo $cat['name']; ?></h3>
 		             </div>

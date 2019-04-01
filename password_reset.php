@@ -8,7 +8,7 @@
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition login-page layout-top-nav">
   <?php include 'includes/navbar.php'; ?> 
-<div class="login-form mail_form">
+<div class="login-form mail_form " style="margin-top:60px;">
   	<?php
       if(isset($_SESSION['error'])){
         echo "

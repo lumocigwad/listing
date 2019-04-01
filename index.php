@@ -9,7 +9,7 @@
     <?php include 'includes/navbar.php'; ?>
     <!--//END header -->
     <!-- SLIDER -->
-   
+   <?php include 'land.php'; ?>
     <!--// SLIDER -->
     <!--//END HEADER -->
     <!--============================= FIND PLACES =============================-->

@@ -14,8 +14,9 @@
 </style>
 </head>
 <body>
-<div class="login-form"> 
-    <?php
+    <div class="container">
+    <div class="erd">
+     <?php
       if(isset($_SESSION['error'])){
         echo "
           <div class='callout  text-center'>
@@ -26,13 +27,16 @@
       }
       if(isset($_SESSION['success'])){
         echo "
-          <div class='callout  text-center'>
+          <div class='callout callout-success text-center'>
             <p>".$_SESSION['success']."</p> 
           </div>
         ";
         unset($_SESSION['success']);
       }
-    ?>   
+    ?>   </div>
+  </div>
+<div class="login-form"> 
+   
     <form action="register.php" method="POST">
 		<div class="avatar"><i class="fa fa-user"></i></div>
     	<h4 class="modal-title">Register New Membership</h4>
@@ -71,7 +75,7 @@
         <input type="submit" class="btn btn-primary btn-block btn-lg" value="Signup" name="signup">  <br>
 
         <div class="form-group small clearfix">
-          <a href="login.php">I already have a membership</a><br>
+          <a href="login.php">Already have a an Account</a><br>
            <a href="index.php" class="forgot-link"><i class="icon-home"></i> Home</a>
            
         </div>             

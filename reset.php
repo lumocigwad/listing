@@ -63,7 +63,7 @@
 
 			        $mail->send();
 
-			        $_SESSION['success'] = 'Password reset link sent';
+			        $_SESSION['success'] = 'check your Email for Password reset link sent';
 			     
 			    } 
 			    catch (Exception $e) {

@@ -1,11 +1,15 @@
-<?php include 'includes/header.php'; ?>
 <?php include 'includes/session.php'; ?>
-
-<?php include 'includes/navbar.php' ?>
 <?php
   if(!isset($_SESSION['land'])){
     header('location: login.php');
   }
+ 
+?>
+
+<?php include 'includes/header.php'; ?>
+
+
+<?php include 'includes/navbar.php' ?>
 
 
 ?>
@@ -13,7 +17,7 @@
 <html>
 
 <body class="layout-top-nav">
-<div class="container ">
+<div class="container " style="margin-top: 60px;">
   <div class="col-md-2"></div>
 <div class="col-sm-10 listing-form ">
 <form class="form-horizontal" method="POST" action="products_add.php" enctype="multipart/form-data">

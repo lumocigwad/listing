@@ -30,7 +30,7 @@
 					$stmt = $conn->prepare("UPDATE users SET password=:password WHERE id=:id");
 					$stmt->execute(['password'=>$password, 'id'=>$row['id']]);
 
-					$_SESSION['success'] = 'Password successfully reset';
+					$_SESSION['success'] = '<h1>Password successfully Changed </h1>';
 					header('location: login.php');
 				} 
 				catch(PDOException $e){

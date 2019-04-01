@@ -1389,13 +1389,12 @@ width: 100%;
   background-position: top center;
 
 }
-
-.justify-content-center {
-  position:relative;
-  left:400px;
+.erd{
+ padding-top:  60px;
 }
-
-
+.space{
+  margin:200px;
+}
 
 
 

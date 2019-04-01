@@ -12,14 +12,14 @@
   $conn = $pdo->open();
 ?>
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<body class="hold-transition  sidebar-mini" style="background: #000000;color: #ffffff;">
+<div class="wrapper" >
 
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background: #000000;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -57,9 +57,9 @@
       ?>
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <div class="small-box bg-aqua " style="height:12em;">
             <div class="inner">
               <?php
                 $stmt = $conn->prepare("SELECT * FROM details LEFT JOIN products ON products.id=details.product_id");
@@ -82,9 +82,9 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-green">
+          <div class="small-box bg-green" style="height:12em;">
             <div class="inner">
               <?php
                 $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM products");
@@ -102,10 +102,12 @@
             <a href="student.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
+      </div>
+        <div class="row">
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-yellow">
+          <div class="small-box bg-yellow " style="height:12em;">
             <div class="inner">
               <?php
                 $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users");
@@ -124,9 +126,9 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <div class="small-box  bg-red" style="height:12em;">
             <div class="inner">
               <?php
                 $stmt = $conn->prepare("SELECT * FROM details LEFT JOIN sales ON sales.id=details.sales_id LEFT JOIN products ON products.id=details.product_id WHERE sales_date=:sales_date");
@@ -150,10 +152,11 @@
             <a href="borrow.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
+      
         <!-- ./col -->
       </div>
       <!-- /.row -->
-      <div class="row">
+   <!--    <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
@@ -187,7 +190,7 @@
         </div>
       </div>
 
-      </section>
+      </section> -->
       <!-- right col -->
     </div>
   	<?php include 'includes/footer.php'; ?>

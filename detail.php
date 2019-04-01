@@ -82,7 +82,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p><h5>T<?php echo $product['prodname']; ?></h5></p>
+                    <p><h5><?php echo $product['prodname']; ?></h5></p>
                     <span>• </span>
                     <div>
                     <p><span>KSH  <?php echo number_format($product['price'], 2); ?></span></p>

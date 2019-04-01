@@ -18,6 +18,8 @@
 				$stmt->execute(['user_id'=>$user['id'], 'product_id'=>$id, 'quantity'=>$quantity]);
 				$output['message'] = 'Item added to cart';
 				
+
+				
 			}
 			catch(PDOException $e){
 				$output['error'] = true;

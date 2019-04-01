@@ -7,15 +7,16 @@
         <div class="container">
             
 	 <?php
+     $nu=0;
 	       			$conn = $pdo->open();
 
-	       			$stmt = $conn->prepare("SELECT COUNT(*) AS numrows FROM products WHERE units>0 and name LIKE :keyword" );
+	       			$stmt = $conn->prepare("SELECT COUNT(*) AS numrows FROM products WHERE units>0 and name LIKE :keyword or location LIKE :keyword" );
 	       			$stmt->execute(['keyword' => '%'.$_POST['keyword'].'%']);
 	       			$row = $stmt->fetch();
-	       			if($row['numrows'] < 1){
+	       			if($row['numrows']< 1){
 	       				echo '
-                        <div class="row justify-content-center">
-                        <div class="col-md-5">
+                        <div class="row center-block">
+                        <div class="center-block">
                         <div class="styled-heading">
                         <h3 class="page-header">No Search Results  For <b>'.$_POST['keyword'].'</b></h3>
                         </div>
@@ -24,8 +25,8 @@
 	       			}
 	       			else{
 	       				echo '
-                        <div class="row justify-content-center">
-                        <div class="col-md-5">
+                        <div class="row center-block">
+                        <div class="center-block">
                         <div class="styled-heading">
                         <h3 class="page-header">Search results for <b>'.$_POST['keyword'].'</b></h3>
                          </div>
@@ -33,7 +34,7 @@
                        </div>';
 		       			try{
 		       			 	$inc = 3;	
-						    $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE :keyword");
+						    $stmt = $conn->prepare("SELECT * FROM products WHERE  name LIKE :keyword or location LIKE :keyword");
 						    $stmt->execute(['keyword' => '%'.$_POST['keyword'].'%']);
 					 
 						    foreach ($stmt as $row) {
@@ -61,7 +62,7 @@
                                         <p>".$row['contact']."</p>
                                     </li>
                                     <li><span class='icon-link'></span>
-                                        <p>".$row['units']." <span style='color:#006400;font-weight:bold;'>Units available<span></p>
+                                        <p>".$row['units']." <span style='color:#006400;font-weight:bold;'>Rooms available<span></p>
                                     </li>
 
                                 </ul>

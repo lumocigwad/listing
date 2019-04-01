@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css">
     <!-- bootstrap datepicker -->
     <link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+      <link rel="stylesheet" href="../css/style.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">

@@ -17,8 +17,9 @@
 </style>
 </head>
 <body>
-<div class="login-form"> 
-    <?php
+  <div class="container">
+    <div class="erd">
+     <?php
       if(isset($_SESSION['error'])){
         echo "
           <div class='callout  text-center'>
@@ -29,25 +30,28 @@
       }
       if(isset($_SESSION['success'])){
         echo "
-          <div class='callout  text-center'>
+          <div class='callout callout-success text-center'>
             <p>".$_SESSION['success']."</p> 
           </div>
         ";
         unset($_SESSION['success']);
       }
-    ?>   
+    ?>   </div>
+  </div>
+<div class="login-form"> 
+   
     <form action="verify.php" method="POST">
 		<div class="avatar"><i class="fa fa-user"></i></div>
     	<h4 class="modal-title">Login to Your Account</h4>
         <div class="form-group">
-            <input type="email" class="form-control" placeholder="Username" name="email" required="required">
+            <input type="email" class="form-control" placeholder="Email" name="email" required="required">
         </div>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="password" required="required">
         </div>
         <div class="form-group small clearfix">
-            <label class="checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a href="password_forgot.php" class="forgot-link">Forgot Password?</a>
+       
+            <a href="password_forgot.php" class="forgot-link" >Forgot Password?</a>
         </div> 
         
         <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login" name="login">  <br>

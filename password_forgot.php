@@ -2,13 +2,13 @@
 <?php include 'includes/header.php'; ?>
 <body >
   <div class="container">
-    <div class="row">
-      <div class="col-md-12"></div>
-<div class="login-form mail_form">
-  	<?php
+    <div class="row" style="margin:60px;">
+      <div class="container">
+    <div class="erd">
+     <?php
       if(isset($_SESSION['error'])){
         echo "
-          <div class='callout callout-danger text-center'>
+          <div class='callout  text-center'>
             <p>".$_SESSION['error']."</p> 
           </div>
         ";
@@ -22,7 +22,10 @@
         ";
         unset($_SESSION['success']);
       }
-    ?>
+    ?>   </div>
+  </div>
+      <div class="col-md-12"></div>
+<div class="login-form mail_form">
   	
 
     	<form action="reset.php" method="POST">
