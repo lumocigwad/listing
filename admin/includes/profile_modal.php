@@ -20,7 +20,7 @@
                     <label for="password" class="col-sm-3 control-label">Password</label>
 
                     <div class="col-sm-9"> 
-                      <input type="password" class="form-control" id="password" name="password" value="<?php echo $admin['password']; ?>">
+                      <input type="password" class="form-control" id="password" name="password" value="<?php echo $admin['password']; ?>" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$"  title="Password must contain: Minimum 7 characters atleast 1 Alphabet and 1 Number">
                     </div>
                 </div>
                 <div class="form-group">

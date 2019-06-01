@@ -47,7 +47,7 @@
             <input type="email" class="form-control" placeholder="Email" name="email" required="required">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" name="password" required="required">
+            <input type="password" class="form-control" placeholder="Password" name="password" required="required" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$"  title="Password must contain: Minimum 7 characters atleast 1 Alphabet and 1 Number">
         </div>
         <div class="form-group small clearfix">
        

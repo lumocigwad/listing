@@ -24,7 +24,7 @@
 
     	<form action="password_new.php?code=<?php echo $_GET['code']; ?>&user=<?php echo $_GET['user']; ?>" method="POST">
       		<div class="form-group has-feedback">
-        		<input type="password" class="form-control" name="password" placeholder="New password" required>
+        		<input type="password" class="form-control" name="password" placeholder="New password" required="" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$"  title="Password must contain: Minimum 7 characters atleast 1 Alphabet and 1 Number">
         		<span class="glyphicon glyphicon-lock form-control-feedback"></span>
       		</div>
           <div class="form-group has-feedback">

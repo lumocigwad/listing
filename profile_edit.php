@@ -88,7 +88,7 @@ if(isset($_SESSION['land'])){
 			
 		}
 		else{
-			$_SESSION['error'] = 'Incorrect password';
+			$_SESSION['error'] = 'You have entered an incorrect current password try again';
 		}
 	}
 	else{

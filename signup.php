@@ -65,7 +65,7 @@
   </div>
        
         <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required>
+            <input type="password" class="form-control" name="password" placeholder="Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$" title="Password must contain: Minimum 7 characters atleast 1 Alphabet and 1 Number">
         </div>
         <div class="form-group">
              <input type="password" class="form-control" name="repassword" placeholder="Retype password" required>
