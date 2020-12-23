@@ -1,5 +1,7 @@
 "# listing" 
 "# listing" 
+Listing is a hostel rental management system developed with PHP,JAVASCRIPT, HTML5 and Mysql database.
+
 USER    email    :dennis@gmail.com 
         password :password01
 
